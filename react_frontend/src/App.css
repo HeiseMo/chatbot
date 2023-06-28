@@ -127,6 +127,8 @@
 }
 
 .bot-message {
+  display: flex;
+  flex-direction: row;
   align-self: flex-start;
   background-color: #eee;
 }
@@ -278,4 +280,36 @@
 .viewer__list__text {
   font-size: 16px;
   color: #666;
+}
+
+/*Typing*/
+@keyframes jump {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.typing {
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px 0;
+  padding: 5px;
+}
+.dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 2px;
+  background: #007BFF;
+  border-radius: 50%;
+  animation: jump 1s infinite;
+}
+
+.typing .dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing .dot:nth-child(3) {
+  animation-delay: 0.4s;
 }

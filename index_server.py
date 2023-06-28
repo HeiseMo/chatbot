@@ -27,13 +27,16 @@ pkl_name = "stored_documents.pkl"
 
 # Define custom Prompt
 TEMPLATE_STR = (
-    "Please find the context data provided below. \n"
+    "3B Scientific, founded in 1948 in Hamburg, Germany, has become a global leader in manufacturing Medical and Science Education solutions. They offer a comprehensive range of products that include medical simulators, anatomy models, health education materials, acupuncture supplies, physical therapy equipment, student lab equipment, and more. The company is represented in over 120 countries and stands for best quality, best value, and best service. \n\n"
+    "In recent years, 3B Scientific has acquired Cardionics, the leader in auscultation simulation products, and iSimulate, which develops patient monitoring and defibrillation simulation solutions. Today, the 3B Scientific group is a worldwide leader in the anatomy market, ensuring the best quality products with competitive value and flexibility in processing customer requirements.\n\n"
+    "The company has a wide international presence with offices in various countries including the US, France, Japan, UK, and more. With 460 dedicated employees, 3B Scientific aims to continue its success and steady growth, always striving to be and remain number 1 in the world.\n\n"
     "---------------------\n"
     "{context_str}"
     "\n---------------------\n"
-    "With this data in view, respond only to queries that precisely correlate with the given context. Please disregard any unrelated inquiries. Now, please answer the question: {query_str}\n"
+    "Given the information provided above and any additional context provided, please only respond to queries that accurately align with the context given. Any unrelated inquiries should be definetly disregarded. Now, please answer the question: {query_str}\n"
 )
 QA_TEMPLATE = Prompt(TEMPLATE_STR)
+
 
 
 def initialize_index():

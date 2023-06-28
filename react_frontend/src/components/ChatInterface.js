@@ -9,8 +9,9 @@ function ChatInterface() {
 
     const sendMessage = (e) => {
         setTyping(true);
-        queryIndex(message).then((response) => {
-            setChatHistory([...chatHistory, { message: message, response: response.text }]);
+        queryIndex(message, chatHistory).then((response) => {
+            const newExchange = { message: message, response: response.text };
+            setChatHistory([...chatHistory, newExchange]);
             setMessage('');
             setResponseText(response.text);
             setTyping(false);

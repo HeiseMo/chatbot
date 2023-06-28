@@ -1,5 +1,7 @@
+import { API_BASE_URL } from './../config';
+
 const fetchDocuments = async () => {
-  const response = await fetch('http://localhost:5601/getDocuments', { mode: 'cors' });
+  const response = await fetch(`${API_BASE_URL}/getDocuments`, { mode: 'cors' });
 
   if (!response.ok) {
     return [];
